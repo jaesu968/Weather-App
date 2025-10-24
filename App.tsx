@@ -127,7 +127,7 @@ export default function App() {
                   ios: "search",
                   default: "done",
                 })}
-                onSubmitEditing={searchWeather}
+                onSubmitEditing={() => searchWeather()}
               />
               <NativeButton
                 title="Get Weather"
@@ -296,7 +296,6 @@ const styles = StyleSheet.create({
     padding: 20,
     ...Platform.select({
       ios: {
-        boxShadow: "0 2px 4 px rgba(0, 0, 0, 0.18)",
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 3},
         shadowOpacity: 0.3,
