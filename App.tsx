@@ -62,14 +62,19 @@ export default function App() {
     const placeholders = Platform.select({
       ios: "ios platform",
       android: "android platform",
-      default: "your platform"
+      default: "web platform",
     }); 
-    return (placeholders || "your platform"); 
+    return (placeholders || "web platform"); 
 
   };
 
   const getPlatformSectionTitle = () => {
-
+    const sectionTitles = Platform.select({
+      ios: "ios section title",
+      android: "android section title",
+      default: "section title",
+    }); 
+    return (sectionTitles || "section title"); 
   };
 
   const getPlatformFeatures = (): PlatformFeatures => {
