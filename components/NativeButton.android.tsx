@@ -5,6 +5,7 @@ import {
   TouchableNativeFeedback,
   StyleSheet,
   GestureResponderEvent,
+  Pressable
 } from 'react-native';
 
 type NativeButtonProps = {
@@ -17,7 +18,12 @@ function NativeButton(props: NativeButtonProps) {
 
   return (
     <View style={styles.wrapper}>
-      
+      <Pressable onPress={onPress} android_ripple={{ color: '#fff', borderless: false}}
+      style={({ pressed }) => [
+        styles.button,
+        pressed && styles.pressed,]}>
+        <Text style={styles.text}>{title}</Text>
+      </Pressable> 
     </View>
   );
 }
@@ -29,12 +35,20 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   button: {
+    backgroundColor: '#a943cbff', // android typical color
+    paddingVertical: 12, // Vertical padding
+    paddingHorizontal: 16, // Horizontal padding
+    alignItems: 'center', // Center the text horizontally
+    justifyContent: 'center', // Center the text vertically },
   },
   text: {
     fontSize: 16,
     fontWeight: '500',
     letterSpacing: 0.5,
     color: '#fff',
+  },
+  pressed: {
+    opacity: 0.8,
   },
 });
 

@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightblue'
       }, 
       android: {
-        backgroundColor: 'purple'
+        backgroundColor: '#66c8eeff'
       }, 
       default: {
         backgroundColor: 'white'
