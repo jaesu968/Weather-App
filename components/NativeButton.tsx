@@ -7,7 +7,7 @@ interface ButtonProps {
   style?: ViewStyle;
 }
 
-export default function Button({ title, onPress, style }: ButtonProps) {
+export default function NativeButton({ title, onPress, style }: ButtonProps) {
   return (
     <Pressable
       onPress={onPress}

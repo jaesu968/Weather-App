@@ -1,24 +1,25 @@
 import React from 'react';
 import {
   Text,
-  TouchableOpacity,
   StyleSheet,
   GestureResponderEvent, 
   Pressable
 } from 'react-native';
 
-type NativeButtonProps = {
+interface NativeButtonProps {
   title: string;
-  onPress: (event: GestureResponderEvent) => void;
-};
+  onPress: (event?: GestureResponderEvent) => void;
+  style?: any;
+}
 
 function NativeButton(props: NativeButtonProps) {
-  const { title, onPress } = props;
+  const { title, onPress, style } = props;
 
   return (
     <Pressable onPress={onPress} style={({ pressed }) => [
       styles.button, // base button styles
-      { opacity: pressed ? 0.7 : 1 } 
+      { opacity: pressed ? 0.7 : 1 },
+      style
     ]}>
       <Text style={styles.text}>{title}</Text>
     </Pressable>
