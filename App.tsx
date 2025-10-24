@@ -181,6 +181,17 @@ export default function App() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    ...Platform.select({
+      ios: {
+        backgroundColor: 'lightblue'
+      }, 
+      android: {
+        backgroundColor: 'purple'
+      }, 
+      default: {
+        backgroundColor: 'white'
+      }
+    }),
   },
   container: {
     flex: 1,
@@ -193,6 +204,20 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     color: "#333",
+    ...Platform.select({
+      ios: {
+        fontSize: 17, 
+        fontWeight: 'bold'
+      }, 
+      android: {
+        fontSize: 20, 
+        fontWeight: 'bold'
+      },
+      default: {
+        fontSize: 22, 
+        fontWeight: 'normal'
+      }
+    })
   },
   platformInfo: {
     fontSize: 14,
@@ -207,6 +232,20 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 10,
     borderLeftWidth: 4,
+    ...Platform.select({
+      ios: {
+        fontSize: 15, 
+        fontWeight: 'regular',
+      }, 
+      android: {
+        fontSize: 16, 
+        fontWeight: 'regular',
+      }, 
+      default: {
+        fontSize: 17, 
+        fontWeight: 'regular'
+      }
+    }),
   },
   featuresTitle: {
     fontSize: 16,
@@ -230,7 +269,23 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: "white",
-
+    ...Platform.select({
+      ios: {
+        borderRadius: 10, 
+        padding: 8, 
+        borderWidth: 1, 
+      }, 
+      android: {
+        borderRadius: 4, 
+        padding: 8, 
+        borderWidth: 2
+      },
+      default: {
+        borderRadius: 8, 
+        padding: 8, 
+        borderWidth: 1
+      }
+    }),
     fontSize: 16,
     marginBottom: 15,
     borderColor: "#ddd",
@@ -239,7 +294,21 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     margin: 20,
     padding: 20,
-
+    ...Platform.select({
+      ios: {
+        boxShadow: "0 2px 4 px rgba(0, 0, 0, 0.18)",
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 3},
+        shadowOpacity: 0.3,
+        shadowRadius: 3
+      },
+      android: {
+        elevation: 2, 
+      }, 
+      default: {
+        elevation: 2
+      }
+    }),
     alignItems: "center",
   },
   cityName: {
