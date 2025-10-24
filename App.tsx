@@ -59,6 +59,12 @@ export default function App() {
   };
 
   const getPlatformPlaceholder = () => {
+    const placeholders = Platform.select({
+      ios: "ios platform",
+      android: "android platform",
+      default: "your platform"
+    }); 
+    return (placeholders || "your platform"); 
 
   };
 
